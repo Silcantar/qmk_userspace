@@ -1,0 +1,28 @@
+SRC += features/select_word.c
+SRC += features/send_unicode_set.c
+
+CONSOLE_ENABLE = yes
+
+UNICODE_COMMON = yes
+
+TAP_DANCE_ENABLE = yes
+
+CAPS_WORD_ENABLE = yes
+
+KEY_OVERRIDE_ENABLE = yes
+
+REPEAT_KEY_ENABLE = yes
+
+RGBLIGHT_ENABLE = yes
+
+RGB_MATRIX_ENABLE = no
+
+COMBO_ENABLE = yes
+
+DYNAMIC_MACRO_ENABLE = yes
+
+SEND_STRING_ENABLE = yes
+
+KEY_LOCK_ENABLE = yes
+
+#SWAP_HANDS_ENABLE = yes
