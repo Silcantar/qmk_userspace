@@ -202,11 +202,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *		`-----------------------------------------------'			`-----------'							`-----------------------------------------------'			`-----------'
  */
 	[_GAME] = LAYOUT_myr(
-		KC_GRAVE	, KC_1		, KC_2		, KC_3		, KC_4		, KC_5		,			  KC_NO		,	  KC_NO		,			  KC_6		, KC_7		, KC_8		, KC_9		, KC_0		, KC_MINUS,
-		KC_TRNS		, KC_TAB	, KC_Q		, KC_W		, KC_E		, KC_R		,			  KC_TRNS	,	  KC_TRNS	,			  KC_Y		, KC_U		, KC_I		, KC_O		, KC_P		, KC_TRNS,
-		KC_TRNS		, KC_LSFT	, KC_A		, KC_S		, KC_D		, KC_F		,			  KC_NO		,	  KC_NO		,			  KC_H		, KC_J		, KC_K		, KC_L		, KC_QUOTE	, KC_TRNS,
-		KC_TRNS		, KC_6		, KC_7		, KC_8		, KC_9		, KC_0		, KC_TRNS	, KC_TRNS	,	  KC_TRNS	, KC_TRNS	, KC_1		, KC_2		, KC_3		, KC_4		, KC_5		, KC_TRNS,
-														  KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	,	  KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	,
+		KC_GRAVE	, KC_F3		, KC_F5		, KC_F8		, KC_F11	, KC_F12	,			  KC_NO		,	  KC_NO		,			  KC_6		, KC_7		, KC_8		, KC_9		, KC_0		, KC_MINUS,
+		KC_Q		, KC_1		, KC_2		, KC_3		, KC_4		, KC_5		,			  KC_TRNS	,	  KC_TRNS	,			  KC_Y		, KC_U		, KC_I		, KC_O		, KC_P		, KC_TRNS,
+		KC_ESC		, KC_A		, KC_S		, KC_W		, KC_D		, KC_E		,			  KC_NO		,	  KC_NO		,			  KC_H		, KC_J		, KC_K		, KC_L		, KC_QUOTE	, KC_TRNS,
+		KC_R		, KC_6		, KC_7		, KC_8		, KC_9		, KC_F		, KC_TAB	, KC_LGUI	,	  KC_TRNS	, KC_TRNS	, KC_1		, KC_2		, KC_3		, KC_4		, KC_5		, KC_TRNS,
+														  KC_ALT	, KC_LCTL	, KC_SPC	, KC_LSFT	,	  KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	,
 
 		KC_NO		, KC_NO		, KC_NO		, KC_NO		,			  KC_NO		,			  KC_NO		,	  KC_NO		, KC_NO		, KC_NO		,			  KC_NO
 	),
@@ -216,16 +216,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *
  *		,-----------------------------------------------------------------------------------------------.	,-----------------------------------------------------------------------------------------------.
  *		|			|			|			|			|			|			|			|			|	|			|			|			|			|			|			|			|			|
- *		|	 1/9	|	 1/7	| 1/6	1/5 | 1/3	2/5 | 2/3	3/5 | 5/6	4/5 |			|			|	|			|			|	 1/8	| 1/4	3/8 | 1/2	5/8 | 3/4	7/8 |	 1/10	|	  1/	|
+ *		|	 ⅑	⅑	|	 ⅐	⅐	|	⅙	⅕	|	⅓	⅖	|	⅔	⅗	|	⅚	⅘	|			|			|	|			|			|	⅛	⅛	|	¼	⅝	|	½	⅝	|	¾	⅞	|	⅒	⅒	|	⅟	⅟	|
  *		|-----------+-----------+-----------+-----------+-----------+-----------|			|-----------|	|-----------|			|-----------+-----------+-----------+-----------+-----------+-----------|
- *		|			|	"||←"	|			| "⁄**⁄←←"	|			|			|			|			|	|			|			|	"**←"	|			|			|			|			|			|
- *		|	Trans	|	|	€	|	~	≈	|	^	°	|	%	‰	|	\	∫	|			|	Trans	|	|	Trans	|			|	*	×	|	7	√	|	8	∞	|	9	∂	|	/	⁄	|	Trans	|
+ *		|			|			|	"[]←"	|	"{}←"	|	"()←"	|	"<>←"	|			|			|	|			|			|  "(**)←←"	|	"¿?←"	|	"¡!←"	|			|			|			|
+ *		|	Trans	|	=	≠	|	[	]	|	{	}	|	(	)	|	<	≤	|			|	Trans	|	|	Trans	|			|	>	≥	|	?	¿	|	!	¡	|	&	—	|	-	_	|	Trans	|
  *		|-----------+-----------+-----------+-----------+-----------+-----------|			|-----------|	|-----------|			|-----------+-----------+-----------+-----------+-----------+-----------|
- *		|			|	"<>←"	|	"[]←"	|	"{}←"	|	"()←"	|  "(**)←"	|			|			|	|			|			|			|			|			|			|			|			|
- *		|	Trans	|	<	≤	|	[	]	|	{	}	|	(	)	|	>	≥	|			|			|	|			|			|	+	±	|	4	D	|	5	E	|	6	F	|	0 "000" |	Trans	|
+ *		|			|			|			|			|			|  			|			|			|	|			|			|			|			|			|			|			|			|
+ *		|	Trans	|	7	√	|	5	€	|	3	µ	|	1	–	|	\	|	|			|			|	|			|			|	/	÷	|	0	@	|	2	~	|	4	°	|	6	^	|	Trans	|
  *		|-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|	|-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|
- *		|			|			|			|			|			|			|			|			|	|			|			|	"__←"	|			|			|			|			|			|
- *		|	Trans	|	µ	Ω	|	#	£	|	$	¢	|	=	≠	|	÷	−	|	Trans	|	Trans	|	|	Trans	|	Trans	|	-	_	|	1	A	|	2	B	|	3	C	|	.	:	|	Trans	|
+ *		|			|			|			|			|			|			|			|			|	|			|			|			|			|			|			|			|			|
+ *		|	Trans	|	`	´	|	#	£	|	*	×	|	9	∂	|	%	‰	|	Trans	|	Trans	|	|	Trans	|	Trans	|	$	¢	|	8	∞	|	+	±	|	,	;	|	.	:	|	Trans	|
  *		`-----------------------------------+-----------+-----------+-----------+-----------+-----------|	|-----------+-----------+-----------+-----------+-----------+-----------------------------------'
  *											|			|			|			|			|			|	|			|			|			|			|			|
  *											|	Trans	|	Trans	|	Trans	|	Trans	|	Trans	|	|	Trans	|	Trans	|	Trans	|	Trans	|	Trans	|
@@ -236,15 +236,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *		|			|			|			|			|			|			|							|			|			|			|			|			|			|
  *		`-----------------------------------------------'			`-----------'							`-----------------------------------------------'			`-----------'
  */
-	// [_NUMERIC] = LAYOUT_myr(
-	// 	CK_1_9		, CK_1_7	, CK_1_6	, CK_1_3	, CK_2_3	, CK_5_6	,			  KC_NO		,	  KC_NO		,			  CK_1_8	, CK_1_4	, CK_1_2	, CK_3_4	, CK_1_10	, CK_ONE_OVER,
-	// 	KC_TRNS		, KC_BSLS	, KC_TILDE	, TD_CCOMM	, KC_PERCENT, TD_PIPES	,			  KC_TRNS	,	  KC_TRNS	,			  TD_STARS	, KC_7		, KC_8		, KC_9		, KC_MINUS	, KC_TRNS,
-	// 	KC_TRNS		, TD_ANGLES	, TD_BRACKS	, TD_BRACES	, TD_PARENS	, TD_PASCOMM,			  KC_NO		,	  KC_NO		,			  RALT_SLSH	, RSFT_0	, RCTL_1	, LALT_2	, RGUI_3	, KC_TRNS,
-	// 	KC_TRNS		, CK_MICRO	, KC_HASH	, KC_DOLLAR	, KC_EQUAL	, CK_DIVIDE	, KC_TRNS	, KC_TRNS	,	  KC_TRNS	, KC_TRNS	, KC_PLUS	, KC_4		, KC_5		, KC_6		, KC_DOT	, KC_TRNS,
-	// 													  KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	,	  KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	,
-
-	// 	KC_NO		, KC_NO		, KC_NO		, KC_NO		,			  KC_NO		,			  KC_NO		,	  KC_NO		, KC_NO		, KC_NO		,			  KC_NO
-	// ),
 
 	[_NUMERIC] = LAYOUT_myr(
 		CK_1_9		, CK_1_7	, CK_1_6	, CK_1_3	, CK_2_3	, CK_5_6	,			  KC_NO		,	  KC_NO		,			  CK_1_8	, CK_1_4	, CK_1_2	, CK_3_4	, CK_1_10	, CK_ONE_OVER,
@@ -282,8 +273,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *		`-----------------------------------------------'			`-----------'							`-----------------------------------------------'			`-----------'
  */
 	[_FUNCTION] = LAYOUT_myr(
-		KC_F1		, KC_F2		, KC_F3		, KC_F4		, KC_F5		, KC_F6		,			  KC_NO		,	  KC_NO		,			  KC_F7		, KC_F8		, KC_F9		, KC_F10	, KC_F11	, KC_F12,
-		KC_TRNS		, KC_HOME	, C(KC_LEFT), C(KC_RGHT), KC_END	, C(KC_F)	,			  KC_TRNS	,	  KC_TRNS	,			  KC_PGUP	, KC_F1		, KC_F4		, KC_F7		, KC_F10	, KC_TRNS,
+		KC_F13		, KC_F14	, KC_F15	, KC_F16	, KC_F17	, KC_F18	,			  KC_NO		,	  KC_NO		,			  KC_F19	, KC_F20	, KC_F21	, KC_F22	, KC_F23	, KC_F24,
+		KC_TRNS		, KC_CAPS	, KC_PRT	, KC_HOME	, KC_END	, KC_PRT	,			  KC_TRNS	,	  KC_TRNS	,			  KC_PGUP	, KC_F1		, KC_F4		, KC_F7		, KC_F10	, KC_TRNS,
 		KC_TRNS		, KC_LEFT	, KC_DOWN	, KC_UP		, KC_RIGHT	, C(KC_H)	,			  KC_NO		,	  KC_NO		,			  KC_PGDN	, RSFT_F2	, RCTL_F5	, LALT_F8	, RGUI_F11	, KC_TRNS,
 		KC_TRNS		, CMD_UNDO	, CMD_CUT	, CMD_COPY	, CK_PASTE	, CMD_REDO	, KC_TRNS	, KC_TRNS	,	  KC_TRNS	, KC_TRNS	, CMD_CLSWIN, KC_F3		, KC_F6		, KC_F9		, KC_F12	, KC_TRNS,
 														  KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	,	  KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	,
