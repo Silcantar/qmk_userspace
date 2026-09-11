@@ -48,6 +48,7 @@
 #define RALT_ACTIVE		(GET_ALL_MODS & MOD_MASK_RALT)
 #define RAS_ACTIVE		(GET_ALL_MODS & MOD_MASK_SHIFT & MOD_MASK_RALT)
 #define CLEAR_SHIFT		del_weak_mods(MOD_MASK_SHIFT); del_oneshot_mods(MOD_MASK_SHIFT); unregister_mods(MOD_MASK_SHIFT)
+#define CLEAR_CTRL		del_weak_mods(MOD_MASK_CTRL); del_oneshot_mods(MOD_MASK_CTRL); unregister_mods(MOD_MASK_CTRL)
 
 // Commands
 // Function Layer

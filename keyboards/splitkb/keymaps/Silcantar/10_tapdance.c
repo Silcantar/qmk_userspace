@@ -340,12 +340,14 @@ void td_quotes_finished(tap_dance_state_t *state, void *user_data) {
 			if (SHIFT_ACTIVE) {
 				CLEAR_SHIFT;
 				if (CTRL_ACTIVE) {
+					CLEAR_CTRL;
 					SEND_STRING("\"\"\"\"\"\"" SS_TAP(X_LEFT) SS_TAP(X_LEFT) SS_TAP(X_LEFT));
 				} else {
 					SEND_STRING("\"\"" SS_TAP(X_LEFT));
 				}
 			} else {
 				if (CTRL_ACTIVE) {
+					CLEAR_CTRL;
 					SEND_STRING("''''''" SS_TAP(X_LEFT) SS_TAP(X_LEFT) SS_TAP(X_LEFT));
 				} else {
 					SEND_STRING("''" SS_TAP(X_LEFT));

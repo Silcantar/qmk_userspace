@@ -290,16 +290,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
 			// case KC_TILDE:		return send_unicode_set("", "≈", "≅", "≉");		break;
 			// case KC_CIRC:		return send_unicode_set("", "°", "", "°");		break;
 		// Row 3
-			case KC_7:			return send_unicode_set("", "√", "∛", "∜");		break;
-			case KC_5:			return send_unicode_set("", "€", "∧", "");		break;
-			case KC_3:			return send_unicode_set("", "µ", "", "");		break;
-			case KC_1:			return send_unicode_set("", "–", "", "");		break;
-			case KC_BSLS:		return send_unicode_set("", "", "∬", "∭");		break;
-			case KC_SLSH:		return send_unicode_set("", "÷", "", "∠");		break;
-			case KC_0:			return send_unicode_set("", "@", "∪", "∩");	break;
-			case KC_2:			return send_unicode_set("", "~", "", "");		break;
-			case KC_4:			return send_unicode_set("", "°", "∆", "");		break;
-			case KC_6:			return send_unicode_set("", "", "∨", "");		break;
+			case LGUI_7:		return send_unicode_set("", "√", "∛", "∜");		break;
+			case LALT_5:		return send_unicode_set("", "€", "∧", "");		break;
+			case LCTL_3:		return send_unicode_set("", "µ", "", "");		break;
+			case LSFT_1:		return send_unicode_set("", "–", "", "");		break;
+			case RALT_BSLS:		return send_unicode_set("", "", "∬", "∭");		break;
+			case RALT_SLSH:		return send_unicode_set("", "÷", "", "∠");		break;
+			case RSFT_0:		return send_unicode_set("", "@", "∪", "∩");	break;
+			case RCTL_2:		return send_unicode_set("", "~", "", "");		break;
+			case LALT_4:		return send_unicode_set("", "°", "∆", "");		break;
+			case RGUI_6:		return send_unicode_set("", "", "∨", "");		break;
 		// Row 4
 			case KC_GRAVE:		return send_unicode_set("", "´", "‹", "›");		break;
 			case KC_HASH:		return send_unicode_set("", "£", "⊂", "⊃");		break;
