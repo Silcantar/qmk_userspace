@@ -194,7 +194,7 @@ void td_winman_reset(tap_dance_state_t *state, void *user_data) {
 void td_angles_finished(tap_dance_state_t *state, void *user_data) {
 	td_angles_tap_state.state = cur_dance(state);
 	switch (td_angles_tap_state.state) {
-		case TD_SINGLE_TAP: 
+		case TD_SINGLE_TAP:
 			if (SHIFT_ACTIVE) {
 				CLEAR_SHIFT;
 				send_unicode_string("≤");
@@ -228,7 +228,7 @@ void td_angles_reset(tap_dance_state_t *state, void *user_data) {
 void td_bracks_finished(tap_dance_state_t *state, void *user_data) {
 	td_bracks_tap_state.state = cur_dance(state);
 	switch (td_bracks_tap_state.state) {
-		case TD_SINGLE_TAP: 
+		case TD_SINGLE_TAP:
 			if (SHIFT_ACTIVE) {
 				CLEAR_SHIFT;
 				send_string("]");
@@ -262,7 +262,7 @@ void td_bracks_reset(tap_dance_state_t *state, void *user_data) {
 void td_braces_finished(tap_dance_state_t *state, void *user_data) {
 	td_braces_tap_state.state = cur_dance(state);
 	switch (td_braces_tap_state.state) {
-		case TD_SINGLE_TAP: 
+		case TD_SINGLE_TAP:
 			if (SHIFT_ACTIVE) {
 				CLEAR_SHIFT;
 				send_string("}");
@@ -296,7 +296,7 @@ void td_braces_reset(tap_dance_state_t *state, void *user_data) {
 void td_parens_finished(tap_dance_state_t *state, void *user_data) {
 	td_parens_tap_state.state = cur_dance(state);
 	switch (td_parens_tap_state.state) {
-		case TD_SINGLE_TAP: 
+		case TD_SINGLE_TAP:
 			if (SHIFT_ACTIVE) {
 				CLEAR_SHIFT;
 				send_string(")");
@@ -339,9 +339,17 @@ void td_quotes_finished(tap_dance_state_t *state, void *user_data) {
 		case TD_DOUBLE_TAP:
 			if (SHIFT_ACTIVE) {
 				CLEAR_SHIFT;
-				SEND_STRING("\"\"" SS_TAP(X_LEFT));
+				if (CTRL_ACTIVE) {
+					SEND_STRING("\"\"\"\"\"\"" SS_TAP(X_LEFT) SS_TAP(X_LEFT) SS_TAP(X_LEFT));
+				} else {
+					SEND_STRING("\"\"" SS_TAP(X_LEFT));
+				}
 			} else {
-				SEND_STRING("''" SS_TAP(X_LEFT));
+				if (CTRL_ACTIVE) {
+					SEND_STRING("''''''" SS_TAP(X_LEFT) SS_TAP(X_LEFT) SS_TAP(X_LEFT));
+				} else {
+					SEND_STRING("''" SS_TAP(X_LEFT));
+				}
 			}
 			break;
 		case TD_TRIPLE_TAP:
@@ -504,7 +512,7 @@ tap_dance_action_t tap_dance_actions[] = {
 	[_BRACES]		= ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_braces_finished, td_braces_reset),
 	[_PARENS]		= ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_parens_finished, td_parens_reset),
 	[_QUOTES]		= ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_quotes_finished, td_quotes_reset),
-	
+
 	// Macros
 	[_EXCLAMS]		= ACTION_TAP_DANCE_FN(td_exclams),
 	[_FSQUOTE]		= ACTION_TAP_DANCE_FN(td_fsquote),

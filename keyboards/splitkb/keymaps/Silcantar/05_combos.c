@@ -1,6 +1,6 @@
 enum combos {
 	//CAPS_WORD,
-	
+
 	LD_COLEMAK,
 	LD_QWERTY,
 	LD_GREEK,
@@ -11,7 +11,7 @@ enum combos {
 	LD_FUNC,
 	LD_MOUSE,
 	LD_WINMAN,
-	
+
 	LU_COLEMAK,
 	LU_QWERTY,
 	LU_GREEK,
@@ -37,8 +37,8 @@ const uint16_t PROGMEM combo_layerdown_a[] = {CK_LAYERDOWN, KC_A, COMBO_END};
 const uint16_t PROGMEM combo_layerdown_r[] = {CK_LAYERDOWN, KC_R, COMBO_END};
 const uint16_t PROGMEM combo_layerdown_s[] = {CK_LAYERDOWN, KC_S, COMBO_END};
 const uint16_t PROGMEM combo_layerdown_t[] = {CK_LAYERDOWN, KC_T, COMBO_END};
-const uint16_t PROGMEM combo_layerdown_g[] = {CK_LAYERDOWN, LGUI_G, COMBO_END};
-const uint16_t PROGMEM combo_layerdown_m[] = {CK_LAYERDOWN, RGUI_M, COMBO_END};
+const uint16_t PROGMEM combo_layerdown_g[] = {CK_LAYERDOWN, KC_G, COMBO_END};
+const uint16_t PROGMEM combo_layerdown_m[] = {CK_LAYERDOWN, KC_M, COMBO_END};
 const uint16_t PROGMEM combo_layerdown_n[] = {CK_LAYERDOWN, KC_N, COMBO_END};
 const uint16_t PROGMEM combo_layerdown_e[] = {CK_LAYERDOWN, KC_E, COMBO_END};
 const uint16_t PROGMEM combo_layerdown_i[] = {CK_LAYERDOWN, KC_I, COMBO_END};
@@ -48,8 +48,8 @@ const uint16_t PROGMEM combo_layerup_a[] = {CK_LAYERUP, KC_A, COMBO_END};
 const uint16_t PROGMEM combo_layerup_r[] = {CK_LAYERUP, KC_R, COMBO_END};
 const uint16_t PROGMEM combo_layerup_s[] = {CK_LAYERUP, KC_S, COMBO_END};
 const uint16_t PROGMEM combo_layerup_t[] = {CK_LAYERUP, KC_T, COMBO_END};
-const uint16_t PROGMEM combo_layerup_g[] = {CK_LAYERUP, LGUI_G, COMBO_END};
-const uint16_t PROGMEM combo_layerup_m[] = {CK_LAYERUP, RGUI_M, COMBO_END};
+const uint16_t PROGMEM combo_layerup_g[] = {CK_LAYERUP, KC_G, COMBO_END};
+const uint16_t PROGMEM combo_layerup_m[] = {CK_LAYERUP, KC_M, COMBO_END};
 const uint16_t PROGMEM combo_layerup_n[] = {CK_LAYERUP, KC_N, COMBO_END};
 const uint16_t PROGMEM combo_layerup_e[] = {CK_LAYERUP, KC_E, COMBO_END};
 const uint16_t PROGMEM combo_layerup_i[] = {CK_LAYERUP, KC_I, COMBO_END};
@@ -57,10 +57,10 @@ const uint16_t PROGMEM combo_layerup_o[] = {CK_LAYERUP, KC_O, COMBO_END};
 
 const uint16_t PROGMEM lalt_lock[] = {KC_CAPS, RALT_TABL, COMBO_END};
 const uint16_t PROGMEM ralt_lock[] = {KC_CAPS, RALT_TAB, COMBO_END};
-const uint16_t PROGMEM lctl_lock[] = {KC_CAPS, OSM_LCTL, COMBO_END};
-const uint16_t PROGMEM rctl_lock[] = {KC_CAPS, OSM_RCTL, COMBO_END};
+const uint16_t PROGMEM lctl_lock[] = {KC_CAPS, OS_LCTL, COMBO_END};
+const uint16_t PROGMEM rctl_lock[] = {KC_CAPS, OS_RCTL, COMBO_END};
 const uint16_t PROGMEM lgui_lock[] = {KC_CAPS, LGUI_ESC, COMBO_END};
-const uint16_t PROGMEM rgui_lock[] = {KC_CAPS, OSM_RGUI, COMBO_END};
+const uint16_t PROGMEM rgui_lock[] = {KC_CAPS, OS_RGUI, COMBO_END};
 
 combo_t key_combos[] = {
 	[LD_COLEMAK]	= COMBO(combo_layerdown_a, COLEMAK),
@@ -73,7 +73,7 @@ combo_t key_combos[] = {
 	[LD_FUNC]		= COMBO(combo_layerdown_e, FUNCTION),
 	[LD_MOUSE]		= COMBO(combo_layerdown_i, MOUSE),
 	[LD_WINMAN]		= COMBO(combo_layerdown_o, WINMAN),
-	
+
 	[LU_COLEMAK]	= COMBO(combo_layerup_a, COLEMAK),
 	[LU_QWERTY]		= COMBO(combo_layerup_r, QWERTY),
 	[LU_GREEK]		= COMBO(combo_layerup_s, GREEK),

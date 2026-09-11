@@ -30,20 +30,21 @@
 #define KEYLOCK			MT(QK_LOCK, KC_CAPS)
 
 // One-Shot Mods
-#define OSM_LALT		OSM(MOD_LALT)
-#define OSM_RALT		OSM(MOD_RALT)
-#define OSM_LCTL		OSM(MOD_LCTL)
-#define OSM_RCTL		OSM(MOD_RCTL)
-#define OSM_LGUI		OSM(MOD_LGUI)
-#define OSM_RGUI		OSM(MOD_RGUI)
-#define OSM_LSFT		OSM(MOD_LSFT)
-#define OSM_RSFT		OSM(MOD_RSFT)
+// #define OSM_LALT		OSM(MOD_LALT)
+// #define OSM_RALT		OSM(MOD_RALT)
+// #define OSM_LCTL		OSM(MOD_LCTL)
+// #define OSM_RCTL		OSM(MOD_RCTL)
+// #define OSM_LGUI		OSM(MOD_LGUI)
+// #define OSM_RGUI		OSM(MOD_RGUI)
+// #define OSM_LSFT		OSM(MOD_LSFT)
+// #define OSM_RSFT		OSM(MOD_RSFT)
 
 // Mod Masks
 #define GET_ALL_MODS	(get_mods() | get_weak_mods() | get_oneshot_mods())
 #define MOD_MASK_RALT	MOD_BIT(KC_RALT)
 #define MOD_MASK_RAS	(MOD_MASK_RALT | MOD_MASK_SHIFT)
 #define SHIFT_ACTIVE	(GET_ALL_MODS & MOD_MASK_SHIFT)
+#define CTRL_ACTIVE		(GET_ALL_MODS & MOD_MASK_CTRL)
 #define RALT_ACTIVE		(GET_ALL_MODS & MOD_MASK_RALT)
 #define RAS_ACTIVE		(GET_ALL_MODS & MOD_MASK_SHIFT & MOD_MASK_RALT)
 #define CLEAR_SHIFT		del_weak_mods(MOD_MASK_SHIFT); del_oneshot_mods(MOD_MASK_SHIFT); unregister_mods(MOD_MASK_SHIFT)
@@ -127,32 +128,38 @@
 #define RGUI_O			MT(MOD_RGUI, KC_O)
 
 	// Numeric
+#define LGUI_7			MT(MOD_LGUI, KC_7)
+#define LALT_5			MT(MOD_LALT, KC_5)
+#define LCTL_3			MT(MOD_LCTL, KC_3)
+#define LSFT_1			MT(MOD_LSFT, KC_1)
+#define RALT_BSLS		MT(MOD_RALT, KC_BSLS)
 #define RALT_SLSH		MT(MOD_RALT, KC_SLSH)
-#define RSFT_4			MT(MOD_RSFT, KC_4)
 #define RSFT_0			MT(MOD_RSFT, KC_0)
-#define RCTL_5			MT(MOD_RCTL, KC_5)
-#define RCTL_1			MT(MOD_RCTL, KC_1)
-#define LALT_6			MT(MOD_LALT, KC_6)
-#define LALT_2			MT(MOD_LALT, KC_2)
-#define RGUI_0			MT(MOD_RGUI, KC_0)
-#define RGUI_3			MT(MOD_RGUI, KC_3)
+#define RCTL_2			MT(MOD_RCTL, KC_2)
+#define LALT_4			MT(MOD_LALT, KC_4)
+#define RGUI_6			MT(MOD_RGUI, KC_6)
 
 	// Function
-#define RALT_SYM		MT(MOD_RALT, KC_NO)
-#define RSFT_NEW		MT(MOD_RSFT, KC_NO)
-#define RCTL_EDIT		MT(MOD_RCTL, KC_F2)
-#define LALT_SAVE		MT(MOD_LALT, KC_NO)
-#define RGUI_OPEN		MT(MOD_RGUI, KC_NO)
+#define LGUI_UNDO		MT(MOD_LGUI, KC_0)
+#define LALT_CUT		MT(MOD_LALT, KC_0)
+#define LCTL_COPY		MT(MOD_LCTL, KC_0)
+#define LSFT_PASTE		MT(MOD_LSFT, KC_0)
+#define RALT_REDO		MT(MOD_RALT, KC_1)
+#define RALT_PGDN		MT(MOD_RALT, KC_PGDN)
+#define RSFT_F2			MT(MOD_RSFT, KC_F2)
+#define RCTL_F5			MT(MOD_RCTL, KC_F5)
+#define LALT_F8			MT(MOD_LALT, KC_F8)
+#define RGUI_F11		MT(MOD_RGUI, KC_F11)
 
 // Bottom Row Mods
-#define LALT_X			MT(MOD_LALT, KC_X)
-#define LCTL_V			MT(MOD_LCTL, KC_V)
-#define LSFT_C			MT(MOD_LSFT, KC_C)
-#define LGUI_G			MT(MOD_LGUI, KC_G)
-#define RGUI_M			MT(MOD_RGUI, KC_M)
-#define RSFT_K			MT(MOD_RSFT, KC_K)
-#define RCTL_COMMA		MT(MOD_RCTL, KC_COMMA)
-#define RALT_DOT		MT(MOD_RALT, KC_DOT)
+// #define LALT_X			MT(MOD_LALT, KC_X)
+// #define LCTL_V			MT(MOD_LCTL, KC_V)
+// #define LSFT_C			MT(MOD_LSFT, KC_C)
+// #define LGUI_G			MT(MOD_LGUI, KC_G)
+// #define RGUI_M			MT(MOD_RGUI, KC_M)
+// #define RSFT_K			MT(MOD_RSFT, KC_K)
+// #define RCTL_COMMA		MT(MOD_RCTL, KC_COMMA)
+// #define RALT_DOT		MT(MOD_RALT, KC_DOT)
 
 // Bottom Row Hold-Tap
 #define UNDO_X		LT(0, KC_X)
@@ -161,9 +168,10 @@
 #define PASTE_D		LT(0, KC_D)
 #define REDO_Q		LT(0, KC_Q)
 #define SAVE_W		LT(0, KC_W)
-#define EDIT_F		LT(0, KC_F)
+#define FIND_F		LT(0, KC_F)
 #define NEW_P		LT(0, KC_P)
 #define SYM_B		LT(0, KC_B)
+#define REPL_H		LT(0, KC_H)
 
 // Tapping Term Configuration
 #define THUMB_TAP_TERM	TAPPING_TERM + 0
@@ -178,39 +186,45 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 	case RALT_G:
 	case RALT_M:
 	case RALT_SLSH:
-	case RALT_SYM:
+	case RALT_BSLS:
+	case RALT_REDO:
+	case RALT_PGDN:
 	case SYM_B:
 	case REDO_Q:
 		return INSIDE_TAP_TERM;
 	case LSFT_KC_T:
 	case RSFT_N:
-	case RSFT_4:
+	case LSFT_1:
 	case RSFT_0:
-	case RSFT_NEW:
+	case LSFT_PASTE:
+	case RSFT_F2:
 	case NEW_P:
 	case PASTE_D:
 		return INDEX_TAP_TERM;
 	case LCTL_S:
 	case RCTL_E:
-	case RCTL_5:
-	case RCTL_1:
-	case RCTL_EDIT:
-	case EDIT_F:
+	case LCTL_3:
+	case RCTL_2:
+	case LCTL_COPY:
+	case RCTL_F5:
+	case FIND_F:
 	case COPY_C:
 		return MIDDLE_TAP_TERM;
 	case LALT_R:
 	case LALT_I:
-	case LALT_6:
-	case LALT_2:
-	case LALT_SAVE:
+	case LALT_5:
+	case LALT_4:
+	case LALT_CUT:
+	case LALT_F8:
 	case SAVE_W:
 	case CUT_V:
 		return RING_TAP_TERM;
 	case LGUI_A:
 	case RGUI_O:
-	case RGUI_0:
-	case RGUI_3:
-	case RGUI_OPEN:
+	case LGUI_7:
+	case RGUI_6:
+	case LGUI_UNDO:
+	case RGUI_F11:
 	case UNDO_X:
 		return PINKY_TAP_TERM;
 	default:

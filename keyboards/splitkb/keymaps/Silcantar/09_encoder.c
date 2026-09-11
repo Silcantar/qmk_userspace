@@ -70,20 +70,20 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
 		default:
 			if (index == 0 || index == 1 || index == 2) {
 				// Left side
-				// Left/Right Arrow keys
+				// Media Scrub
 				if (clockwise) {
-					tap_code16(MS_WHLR);
+					tap_code16(KC_MFFD);
 				} else {
-					tap_code16(MS_WHLL);
+					tap_code16(KC_MRWD);
 				}
 				return false;
 			} else if (index == 4 || index == 5 || index == 6) {
 				// Right side
-				// Up/Down Arrow Keys
+				// Volume
 				if (clockwise) {
-					tap_code16(MS_WHLD);
+					tap_code16(KC_VOLU);
 				} else {
-					tap_code16(MS_WHLU);
+					tap_code16(KC_VOLD);
 				}
 				return false;
 			}

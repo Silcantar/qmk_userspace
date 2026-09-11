@@ -5,7 +5,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * Default Layer: Colemak-DH-VK
  *
  *		,-----------------------------------------------------------------------------------------------.	,-----------------------------------------------------------------------------------------------.
- *		|	Record	|	‹	›	|			|	◌̂	◌̌	|	◌̊	◌̥	|	◌̀	̀◌̏	|			|			|	|			|			|	„		|	◌̆	◌̑	|	◌̃	◌	|	◌̅	◌̲	|	«	»	|	 Play	|
+ *		|	Record	|	‹	›	|			|	◌̂	 ◌̌	|	◌̊	◌̥	|	◌̀	̀◌̏	|			|			|	|			|			|	„		|	◌̆	◌̑	|	◌̃	◌	|	◌̅	◌̲	|	«	»	|	 Play	|
  *		|	Macro	|	`	´	|	‽	•	|	!	¡	|	@	‡	|	‘	’	|			|			|	|			|			|	“	”	|	&	†	|	?	¿	|	–	—	|	µ	♪	|	Macro	|
  *		|-----------+-----------+-----------+-----------+-----------+-----------|			|-----------|	|-----------|			|-----------+-----------+-----------+-----------+-----------+-----------|
  *		|	Layer	|	  Ø		|	  ʌ		|	  Æ		|	  Œ		|	  ɛ		|			|	 Cut	|	|Paste Plain|			|	  ʤ		|	  Ł		|	  Ü		|	  ə		|	  ʒ		|	Layer	|
@@ -28,10 +28,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 	[_COLEMAK] = LAYOUT_myr(
 		DM_REC1		, KC_GRAVE	, CK_INTBANG, TD_EXCLAMS, KC_AT		, TD_FSQUOTE,			  KC_NO		,	  KC_NO		,			  TD_FDQUOTE, KC_AMPR	, TD_QUES	, CK_NDASH	, CK_CHECK	, DM_PLY1,
-		LAYERDOWN	, TD_QUOTES	, SAVE_W	, EDIT_F	, NEW_P		, SYM_B		,			  CK_PASTE	,	  CK_COPY	,			  KC_J		, KC_L		, KC_U		, KC_Y		, KC_UNDS	, LAYERUP,
-		LGUI_ESC	, LGUI_A	, LALT_R	, LCTL_S	, LSFT_KC_T	, RALT_G	,			  KC_NO		,	  KC_NO		,			  RALT_M	, RSFT_N	, RCTL_E	, LALT_I	, RGUI_O	, COLEMAK,
-		KC_CAPS		, UNDO_X	, CUT_V		, COPY_C	, PASTE_D	, REDO_Q	, RALT_TABL	, TD_MOUSE	,	  TD_WINMAN	, RALT_TAB	, KC_Z		, KC_H		, KC_K		, KC_COMMA	, KC_DOT	, KC_APP,
-											  CK_PASTE	, OSM_LCTL	, LSFT_ENT	, KC_SPACE	, TD_NUMERIC,	  TD_FUNC	, KC_BSPC	, OSM_RSFT	, RCTL_DEL	, CK_COPY	,
+		KC_CAPS		, TD_QUOTES	, SAVE_W	, FIND_F	, NEW_P		, SYM_B		,			  CK_PASTE	,	  CK_COPY	,			  KC_J		, KC_L		, KC_U		, KC_Y		, KC_UNDS	, CW_TOGG,
+		LGUI_ESC	, LGUI_A	, LALT_R	, LCTL_S	, LSFT_KC_T	, RALT_G	,			  KC_NO		,	  KC_NO		,			  RALT_M	, RSFT_N	, RCTL_E	, LALT_I	, RGUI_O	, KC_DEL,
+		LAYERDOWN	, UNDO_X	, CUT_V		, COPY_C	, PASTE_D	, REDO_Q	, RALT_TABL	, TD_MOUSE	,	  KC_APP	, RALT_TAB	, KC_Z		, REPL_H	, KC_K		, KC_COMMA	, KC_DOT	, KC_APP,
+											  CK_PASTE	, OS_LCTL	, LSFT_ENT	, KC_SPACE	, TD_NUMERIC,	  TD_FUNC	, KC_BSPC	, OS_RSFT	, KC_F22	, CK_COPY	,
 
 		KC_NO		, KC_NO		, KC_NO		, KC_NO		,			  KC_NO		,			  KC_NO		,	  KC_NO		, KC_NO		, KC_NO		,			  KC_NO
 	),
@@ -65,8 +65,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		KC_EQUAL	, KC_1		, KC_2		, KC_3		, KC_4		, KC_5		,			  KC_NO		,	  KC_NO		,			  KC_6		, KC_7		, KC_8		, KC_9		, KC_0		, KC_MINUS,
 		LAYERDOWN	, KC_Q		, KC_W		, KC_E		, KC_R		, KC_T		,			  CK_PASTE	,	  CK_COPY	,			  KC_Y		, KC_U		, KC_I		, KC_O		, KC_P		, LAYERUP,
 		LGUI_ESC	, KC_A		, KC_S		, KC_D		, KC_F		, KC_G		,			  KC_NO		,	  KC_NO		,			  KC_H		, KC_J		, KC_K		, KC_L		, KC_QUOTE	, COLEMAK,
-		KC_CAPS		, KC_Z		, KC_X		, KC_C		, KC_V		, KC_B		, RALT_TABL, TD_MOUSE	,	  TD_WINMAN	, RALT_TAB	, KC_N		, KC_M		, KC_COMMA	, KC_DOT	, KC_SLASH	, OSM_RGUI,
-											  CK_PASTE	, OSM_LCTL	, LSFT_ENT	, KC_SPACE	, TD_NUMERIC,	  TD_FUNC	, KC_BSPC	, OSM_RSFT	, OSM_RCTL	, CK_COPY	,
+		KC_CAPS		, KC_Z		, KC_X		, KC_C		, KC_V		, KC_B		, RALT_TABL, TD_MOUSE	,	  OS_LSG	, RALT_TAB	, KC_N		, KC_M		, KC_COMMA	, KC_DOT	, KC_SLASH	, OS_RGUI,
+											  CK_PASTE	, OS_LCTL	, LSFT_ENT	, KC_SPACE	, TD_NUMERIC,	  TD_FUNC	, KC_BSPC	, OS_RSFT	, OS_RCTL	, CK_COPY	,
 
 		KC_NO		, KC_NO		, KC_NO		, KC_NO		,			  KC_NO		,			  KC_NO		,	  KC_NO		, KC_NO		, KC_NO		,			  KC_NO
 	),
@@ -101,7 +101,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		KC_TRNS		, TD_QUOTES	, CK_F_SIGMA, CK_PHI	, CK_PI		, CK_BETA	,			  KC_TRNS	,	  KC_TRNS	,			  CK_XI		, CK_LAMBDA	, CK_THETA	, CK_UPSILON, KC_UNDS	, KC_TRNS,
 		KC_TRNS		, CK_ALPHA	, CK_RHO	, CK_SIGMA	, CK_TAU	, CK_GAMMA	,			  KC_NO		,	  KC_NO		,			  CK_MU		, CK_NU		, CK_EPSILON, CK_IOTA	, CK_OMICRON, KC_TRNS,
 		KC_TRNS		, CK_CHI	, CK_OMEGA	, CK_PSI	, CK_DELTA	, CK_G_QUES	, KC_TRNS	, KC_TRNS	,	  KC_TRNS	, KC_TRNS	, CK_ZETA	, CK_ETA	, CK_KAPPA	, KC_COMMA	, KC_DOT	, KC_TRNS,
-														  KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	,	  KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	,
+											  KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	,	  KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	,
 
 		KC_NO		, KC_NO		, KC_NO		, KC_NO		,			  KC_NO		,			  KC_NO		,	  KC_NO		, KC_NO		, KC_NO		,			  KC_NO
 	),
@@ -136,7 +136,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		KC_TRNS		, CK_CIRCLE	, CK_ARRNW	, CK_ARRU	, CK_ARRNE	, CK_TRI_U	,			  KC_TRNS	,	  KC_TRNS	,			  CK_DOG	, CK_SHRUG	, CK_THUMBU	, CK_POOP	, CK_HEART	, KC_TRNS,
 		KC_TRNS		, CK_TRI_L	, CK_ARRL	, CK_ARRCW	, CK_ARRR	, CK_TRI_R	,			  KC_NO		,	  KC_NO		,			  CK_MINDBLOWN, CK_SILLY, CK_SMILE	, CK_EYEROLL, CK_CRYING	, KC_TRNS,
 		KC_TRNS		, CK_SQUARE	, CK_ARRSW	, CK_ARRD	, CK_ARRSE	, CK_TRI_D	, KC_TRNS	, KC_TRNS	,	  KC_TRNS	, KC_TRNS	, CK_TREX	, CK_SUS	, CK_SHADES	, CK_PARTY	, CK_TIGER	, KC_TRNS,
-														  KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	,	  KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	,
+											  KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	,	  KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	,
 
 		KC_NO		, KC_NO		, KC_NO		, KC_NO		,			  KC_NO		,			  KC_NO		,	  KC_NO		, KC_NO		, KC_NO		,			  KC_NO
 	),
@@ -171,7 +171,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		KC_TRNS		, CK_T_LQUOTE, CK_VILYA	, CK_TELCO	, CK_PARMA	, CK_UMBAR	,			  KC_TRNS	,	  KC_TRNS	,			  CK_ANGA	, CK_LAMBE	, CK_REMPENUQ, CK_ANNA	, CK_T_EXCLAIM, KC_TRNS,
 		KC_TRNS		, CK_AMATIXE3, CK_ROMEN	, CK_SILME	, CK_TINCO	, CK_UNGWE	,			  KC_NO		,	  KC_NO		,			  CK_MALTA	, CK_NUMEN	, CK_TECCO	, CK_AMATIXE1, CK_REMPE	, KC_TRNS,
 		KC_TRNS		, CK_SARINCE, CK_FORMEN	, CK_CALMA	, CK_ANDO	, CK_T_LQUOTE, KC_TRNS	, KC_TRNS	,	  KC_TRNS	, KC_TRNS	, CK_ESSE, CK_HYARMEN, CK_QUESSE, CK_T_COMMA, CK_T_DOT	, KC_TRNS,
-														  KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	,	  KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	,
+											  KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	,	  KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	,
 
 		KC_NO		, KC_NO		, KC_NO		, KC_NO		,			  KC_NO		,			  KC_NO		,	  KC_NO		, KC_NO		, KC_NO		,			  KC_NO
 	),
@@ -206,7 +206,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		KC_Q		, KC_1		, KC_2		, KC_3		, KC_4		, KC_5		,			  KC_TRNS	,	  KC_TRNS	,			  KC_Y		, KC_U		, KC_I		, KC_O		, KC_P		, KC_TRNS,
 		KC_ESC		, KC_A		, KC_S		, KC_W		, KC_D		, KC_E		,			  KC_NO		,	  KC_NO		,			  KC_H		, KC_J		, KC_K		, KC_L		, KC_QUOTE	, KC_TRNS,
 		KC_R		, KC_6		, KC_7		, KC_8		, KC_9		, KC_F		, KC_TAB	, KC_LGUI	,	  KC_TRNS	, KC_TRNS	, KC_1		, KC_2		, KC_3		, KC_4		, KC_5		, KC_TRNS,
-														  KC_ALT	, KC_LCTL	, KC_SPC	, KC_LSFT	,	  KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	,
+											  KC_TRNS	, KC_LALT	, KC_LSFT	, KC_SPC	, KC_LCTL	,	  KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	,
 
 		KC_NO		, KC_NO		, KC_NO		, KC_NO		,			  KC_NO		,			  KC_NO		,	  KC_NO		, KC_NO		, KC_NO		,			  KC_NO
 	),
@@ -239,10 +239,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 	[_NUMERIC] = LAYOUT_myr(
 		CK_1_9		, CK_1_7	, CK_1_6	, CK_1_3	, CK_2_3	, CK_5_6	,			  KC_NO		,	  KC_NO		,			  CK_1_8	, CK_1_4	, CK_1_2	, CK_3_4	, CK_1_10	, CK_ONE_OVER,
-		KC_TRNS		, KC_EQL	, TD_BRACKS	, TD_BRACES	, TD_PARENS	, TD_ANGLES	,			  KC_TRNS	,	  KC_TRNS	,			  TD_PASCOMM, KC_QUES	, KC_EXCL	, KC_ARPT	, KC_MINUS	, KC_TRNS,
+		KC_TRNS		, KC_EQL	, TD_BRACKS	, TD_BRACES	, TD_PARENS	, TD_ANGLES	,			  KC_TRNS	,	  KC_TRNS	,			  TD_PASCOMM, KC_QUES	, KC_EXLM	, KC_AMPR	, KC_MINUS	, KC_TRNS,
 		KC_TRNS		, LGUI_7	, LALT_5	, LCTL_3	, LSFT_1	, RALT_BSLS	,			  KC_NO		,	  KC_NO		,			  RALT_SLSH	, RSFT_0	, RCTL_2	, LALT_4	, RGUI_6	, KC_TRNS,
 		KC_TRNS		, KC_CIRC	, KC_HASH	, TD_STARS	, KC_9		, KC_PERC	, KC_TRNS	, KC_TRNS	,	  KC_TRNS	, KC_TRNS	, KC_PLUS	, KC_8		, KC_PLUS	, KC_COMM	, KC_DOT	, KC_TRNS,
-														  KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	,	  KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	,
+											  KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	,	  KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	,
 
 		KC_NO		, KC_NO		, KC_NO		, KC_NO		,			  KC_NO		,			  KC_NO		,	  KC_NO		, KC_NO		, KC_NO		,			  KC_NO
 	),
@@ -274,10 +274,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 	[_FUNCTION] = LAYOUT_myr(
 		KC_F13		, KC_F14	, KC_F15	, KC_F16	, KC_F17	, KC_F18	,			  KC_NO		,	  KC_NO		,			  KC_F19	, KC_F20	, KC_F21	, KC_F22	, KC_F23	, KC_F24,
-		KC_TRNS		, KC_CAPS	, KC_PRT	, KC_HOME	, KC_END	, KC_PRT	,			  KC_TRNS	,	  KC_TRNS	,			  KC_PGUP	, KC_F1		, KC_F4		, KC_F7		, KC_F10	, KC_TRNS,
-		KC_TRNS		, KC_LEFT	, KC_DOWN	, KC_UP		, KC_RIGHT	, C(KC_H)	,			  KC_NO		,	  KC_NO		,			  KC_PGDN	, RSFT_F2	, RCTL_F5	, LALT_F8	, RGUI_F11	, KC_TRNS,
-		KC_TRNS		, CMD_UNDO	, CMD_CUT	, CMD_COPY	, CK_PASTE	, CMD_REDO	, KC_TRNS	, KC_TRNS	,	  KC_TRNS	, KC_TRNS	, CMD_CLSWIN, KC_F3		, KC_F6		, KC_F9		, KC_F12	, KC_TRNS,
-														  KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	,	  KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	,
+		KC_TRNS		, KC_CAPS	, CW_TOGG	, KC_HOME	, KC_END	, KC_PSCR	,			  KC_TRNS	,	  KC_TRNS	,			  KC_PGUP	, KC_F1		, KC_F4		, KC_F7		, KC_F10	, KC_TRNS,
+		KC_TRNS		, KC_LEFT	, KC_DOWN	, KC_UP		, KC_RIGHT	, C(KC_H)	,			  KC_NO		,	  KC_NO		,			  RALT_PGDN	, RSFT_F2	, RCTL_F5	, LALT_F8	, RGUI_F11	, KC_TRNS,
+		KC_TRNS		, LGUI_UNDO	, LALT_CUT	, LCTL_COPY	, LSFT_PASTE, RALT_REDO	, KC_TRNS	, KC_TRNS	,	  KC_TRNS	, KC_TRNS	, KC_APP	, KC_F3		, KC_F6		, KC_F9		, KC_F12	, KC_TRNS,
+											  KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	,	  KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	,
 
 		KC_NO		, KC_NO		, KC_NO		, KC_NO		,			  KC_NO		,			  KC_NO		,	  KC_NO		, KC_NO		, KC_NO		,			  KC_NO
 	),
@@ -308,11 +308,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *		`-----------------------------------------------'			`-----------'							`-----------------------------------------------'			`-----------'
  */
 	[_MOUSE] = LAYOUT_myr(
-		RGB_SAD		, RGB_SAI	, RGB_HUD	, RGB_HUI	, RGB_RMOD	, RGB_MOD	,			  KC_NO		,	  KC_NO		,			  KC_NO		, KC_NO		, DF_COLEMAK, DF_QWERTY	, QK_REBOOT	, QK_BOOT,
-		KC_TRNS		, RGB_TOG	, KC_MPRV	, KC_MPLY	, KC_MNXT	, KC_VOLU	,			  KC_MPLY	,	  KC_MUTE	,			  MS_WHLU	, MS_WHLL	, MS_UP		, MS_WHLR	, RGB_VAI	, KC_TRNS,
-		KC_TRNS		, CMD_MUTE_MIC, MS_BTN3	, MS_BTN2	, MS_BTN1	, KC_VOLD	,			  KC_NO		,	  KC_NO		,			  MS_WHLD	, MS_LEFT	, MS_DOWN	, MS_RGHT	, RGB_VAD	, KC_TRNS,
+		UG_SATD		, UG_SATU	, UG_HUED	, UG_HUEU	, UG_PREV	, UG_NEXT	,			  KC_NO		,	  KC_NO		,			  KC_NO		, KC_NO		, DF_COLEMAK, DF_QWERTY	, QK_REBOOT	, QK_BOOT,
+		KC_TRNS		, UG_TOGG	, KC_MPRV	, KC_MPLY	, KC_MNXT	, KC_VOLU	,			  KC_MPLY	,	  KC_MUTE	,			  MS_WHLU	, MS_WHLL	, MS_UP		, MS_WHLR	, UG_VALU	, KC_TRNS,
+		KC_TRNS		, CMD_MUTE_MIC, MS_BTN3	, MS_BTN2	, MS_BTN1	, KC_VOLD	,			  KC_NO		,	  KC_NO		,			  MS_WHLD	, MS_LEFT	, MS_DOWN	, MS_RGHT	, UG_VALD	, KC_TRNS,
 		KC_TRNS		, MS_BTN7	, MS_BTN6	, MS_BTN5	, MS_BTN4	, KC_MUTE	, KC_TRNS	, KC_TRNS	,	  KC_TRNS	, KC_TRNS	, CMD_REDO	, CMD_PASTE	, CMD_COPY	, CMD_CUT	, CMD_UNDO	, KC_TRNS,
-														  KC_MPLY	, KC_TRNS	, KC_TRNS	, KC_TRNS	,	  KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_MUTE	,
+											  KC_MPLY	, KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	,	  KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_MUTE	,
 
 		KC_NO		, KC_NO		, KC_NO		, KC_NO		,			  KC_NO		,			  KC_NO		,	  KC_NO		, KC_NO		, KC_NO		,			  KC_NO
 	),
@@ -347,7 +347,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		KC_TRNS		, FILES		, MON_LEFT	, SNAP_LEFT , FULLSCREEN, MAXIMIZE	,			  MINIMIZE	,	  MAXIMIZE	,			  C(S(KC_T)), KC_NO		, SNAP_RIGHT, MON_RIGHT	, LOCK		, KC_TRNS,
 		KC_TRNS		, KC_F23	, RUN		, CS_TAB	, AS_TAB	, MINIMIZE	,			  KC_NO		,	  KC_NO		,			  C(KC_T)	, A_TAB		, C_TAB		, SHOW_DTOP	, PEEK_DTOP	, KC_TRNS,
 		KC_TRNS		, GUI1		, GUI2		, GUI3		, GUI4		, GUI5		, KC_TRNS	, KC_TRNS	,	  KC_TRNS	, KC_TRNS	, GUI6		, GUI7		, GUI8		, GUI9		, GUI0		, KC_TRNS,
-														  MINIMIZE	, KC_TRNS	, KC_TRNS	, KC_TRNS	,	  KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	, MAXIMIZE	,
+											  MINIMIZE	, KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	,	  KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	, MAXIMIZE	,
 
 		KC_NO		, KC_NO		, KC_NO		, KC_NO		,			  KC_NO		,			  KC_NO		,	  KC_NO		, KC_NO		, KC_NO		,			  KC_NO
 	),
@@ -382,7 +382,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		KC_TRNS		, BD_SDTW	, BD_SCNW	, BD_STN	, BD_SCNE	, BD_SDTN	,			  KC_TRNS	,	  KC_TRNS	,			  BD_DSTN	, BD_DCNW	, BD_DTN	, BD_DCNE	, BD_DSTE	, KC_TRNS,
 		KC_TRNS		, BD_STW	, BD_SX		, BD_SV		, BD_SH		, BD_STE	,			  KC_NO		,	  KC_NO		,			  BD_DTW	, BD_DH		, BD_DV		, BD_DX		, BD_DTE	, KC_TRNS,
 		KC_TRNS		, BD_SDTS	, BD_SCSW	, BD_STS	, BD_SCSE	, BD_SDTE	, KC_TRNS	, KC_TRNS	,	  KC_TRNS	, KC_TRNS	, BD_DSTW	, BD_DCSW	, BD_DTS	, BD_DCSE	, BD_DSTS	, KC_TRNS,
-														  KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	,	  KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	,
+											  KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	,	  KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	,
 
 		KC_NO		, KC_NO		, KC_NO		, KC_NO		,			  KC_NO		,			  KC_NO		,	  KC_NO		, KC_NO		, KC_NO		,			  KC_NO
 	),

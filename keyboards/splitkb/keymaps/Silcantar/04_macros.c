@@ -37,27 +37,33 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
 					return false;
 				}
 				break;
-			case RALT_SYM:
+			case LGUI_UNDO:
 				if (record->tap.count) {
-					tap_code16(CMD_SYMBOL);
+					tap_code16(CMD_UNDO);
 					return false;
 				}
 				break;
-			case RSFT_NEW:
+			case LALT_CUT:
 				if (record->tap.count) {
-					tap_code16(CMD_NEW);
+					tap_code16(CMD_CUT);
 					return false;
 				}
 				break;
-			case LALT_SAVE:
+			case LCTL_COPY:
 				if (record->tap.count) {
-					tap_code16(CMD_SAVE);
+					tap_code16(CMD_COPY);
 					return false;
 				}
 				break;
-			case RGUI_OPEN:
+			case LSFT_PASTE:
 				if (record->tap.count) {
-					tap_code16(CMD_OPEN);
+					tap_code16(CMD_PASTE);
+					return false;
+				}
+				break;
+			case RALT_REDO:
+				if (record->tap.count) {
+					tap_code16(CMD_REDO);
 					return false;
 				}
 				break;
@@ -69,9 +75,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
 					return false;
 				}
 				break;
-			case EDIT_F:
+			case FIND_F:
 				if (!record->tap.count && record->event.pressed) {
-					tap_code16(CMD_EDIT);
+					tap_code16(CMD_FIND);
 					return false;
 				}
 				break;
@@ -117,6 +123,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
 					return false;
 				}
 				break;
+			case REPL_H:
+				if (!record->tap.count && record->event.pressed) {
+					tap_code16(CMD_REPL);
+					return false;
+				}
+				break;
 
 		// Layer Cycle Keys
 			case LAYERDOWN:
@@ -154,7 +166,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
 					return false;
 				}
 				break;
-		
+
 		// Modifier Lock
 			case KC_CAPS:
 				if (mod_lock_active) {
@@ -200,7 +212,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
 				register_code(KC_RGUI);
 				return false;
 				break;
-				
+
 // Special Characters
 
 	/* Template for copying
@@ -214,10 +226,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
 
 	// Colemak
 		// Row 1
-			case KC_GRAVE:		return send_unicode_set("", "´", "‹", "›");		break;
 			case CK_INTBANG:	return send_unicode_set("‽", "•", "«", "»");	break;
 			case KC_AT:			return send_unicode_set("", "‡", "̊", "̥");		break;
-			case KC_AMPR:		return send_unicode_set("", "†", "̆", "̑");		break;
 			case CK_NDASH:		return send_unicode_set("–", "—", "̅", "̲");		break;
 			case CK_CHECK:		return send_unicode_set("✓", "✗", "☑", "⮽");	break;
 		// Row 2
@@ -252,7 +262,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
 			case KC_K:			return send_unicode_set("", "", "ʔ", "ʕ");		break;
 			case KC_COMMA:		return send_unicode_set("", "", "̧", "̨");		break;
 			case KC_DOT:		return send_unicode_set("", "", "̈", "̇");		break;
-			
+
 	// Numeric
 		// Row 1
 			case CK_1_9:		return send_unicode_set("⅑", "⅑", "⅑", "⅑");	break;
@@ -268,36 +278,39 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
 			case CK_1_10:		return send_unicode_set("⅒", "⅒", "⁰", "₀");	break;
 			case CK_ONE_OVER:	return send_unicode_set("⅟", "⅟", "ⁿ", "⅟");	break;
 		// Row 2
-			case KC_PIPE:		return send_unicode_set("", "€", "¥", "₹");		break;
-			case KC_TILDE:		return send_unicode_set("", "≈", "≅", "≉");		break;
-			case KC_CIRC:		return send_unicode_set("", "°", "", "°");		break;
-			case KC_PERCENT:	return send_unicode_set("", "‰", "‱", "⁒");		break;
-			case KC_BSLS:		return send_unicode_set("", "∫", "∬", "∭");		break;
-			case KC_ASTR:		return send_unicode_set("", "×", "∏", "∗");		break;
-			case KC_7:			return send_unicode_set("", "√", "∛", "∜");		break;
-			case KC_8:			return send_unicode_set("", "∞", "∝", "א");		break;
-			case KC_9:			return send_unicode_set("", "∂", "∇", "");		break;
-			case KC_SLASH:		return send_unicode_set("", "∅", "⁄", "∠");		break;
-		// Row 3
-			case KC_LT:			return send_unicode_set("", "≤", "≪", "∈");		break;
+			case KC_EQUAL:		return send_unicode_set("", "≠", "≡", "≔");		break;
 			case KC_LBRC:		return send_unicode_set("", "", "⌈", "⌉");		break;
 			case KC_LCBR:		return send_unicode_set("", "", "〈", "〉");		break;
 			case KC_LPRN:		return send_unicode_set("", "", "⌊", "⌋");		break;
+			case KC_LT:			return send_unicode_set("", "≤", "≪", "∈");		break;
 			case KC_GT:			return send_unicode_set("", "≥", "≫", "∋");		break;
-			case KC_PLUS:		return send_unicode_set("", "±", "∑", "∓");		break;
-			case KC_4:			return send_unicode_set("", "", "∆", "");		break;
-			case KC_5:			return send_unicode_set("", "", "∧", "");		break;
+			case KC_EXLM:		return send_unicode_set("", "¡", "", "");		break;
+			case KC_AMPR:		return send_unicode_set("", "—", "", "");		break;
+			// case KC_PIPE:		return send_unicode_set("", "€", "¥", "₹");		break;
+			// case KC_TILDE:		return send_unicode_set("", "≈", "≅", "≉");		break;
+			// case KC_CIRC:		return send_unicode_set("", "°", "", "°");		break;
+		// Row 3
+			case KC_7:			return send_unicode_set("", "√", "∛", "∜");		break;
+			case KC_5:			return send_unicode_set("", "€", "∧", "");		break;
+			case KC_3:			return send_unicode_set("", "µ", "", "");		break;
+			case KC_1:			return send_unicode_set("", "–", "", "");		break;
+			case KC_BSLS:		return send_unicode_set("", "", "∬", "∭");		break;
+			case KC_SLSH:		return send_unicode_set("", "÷", "", "∠");		break;
+			case KC_0:			return send_unicode_set("", "@", "∪", "∩");	break;
+			case KC_2:			return send_unicode_set("", "~", "", "");		break;
+			case KC_4:			return send_unicode_set("", "°", "∆", "");		break;
 			case KC_6:			return send_unicode_set("", "", "∨", "");		break;
-			case KC_0:			return send_unicode_set("", "000", "∪", "∩");	break;
 		// Row 4
-			case CK_MICRO:		return send_unicode_set("µ", "♩", "∴", "♫");	break;
+			case KC_GRAVE:		return send_unicode_set("", "´", "‹", "›");		break;
 			case KC_HASH:		return send_unicode_set("", "£", "⊂", "⊃");		break;
+			case KC_ASTR:		return send_unicode_set("", "×", "∏", "∗");		break;
+			case KC_9:			return send_unicode_set("", "∂", "∇", "");		break;
+			case KC_PERCENT:	return send_unicode_set("", "‰", "‱", "⁒");		break;
 			case KC_DOLLAR:		return send_unicode_set("", "¢", "₿", "₪");		break;
-			case KC_EQUAL:		return send_unicode_set("", "≠", "≡", "≔");		break;
-			case CK_DIVIDE:		return send_unicode_set("÷", "−", "¬", "∡");	break;
-			case KC_1:			return send_unicode_set("", "", "", "");		break;
-			case KC_2:			return send_unicode_set("", "", "", "");		break;
-			case KC_3:			return send_unicode_set("", "", "", "");		break;
+			case KC_8:			return send_unicode_set("", "∞", "∝", "א");		break;
+			case KC_PLUS:		return send_unicode_set("", "±", "∑", "∓");		break;
+			// case CK_MICRO:		return send_unicode_set("µ", "♩", "∴", "♫");	break;
+			// case CK_DIVIDE:		return send_unicode_set("÷", "−", "¬", "∡");	break;
 
 	// Greek
 			case CK_ALPHA:		return send_unicode_set("α", "Α", "ά", "");		break;
