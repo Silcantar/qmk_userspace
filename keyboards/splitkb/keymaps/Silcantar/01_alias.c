@@ -19,25 +19,13 @@
 // Layer Taps
 #define LAYERDOWN		LT(_LAYER, KC_0)
 #define LAYERUP			LT(_LAYER, KC_1)
+#define LYRCLR_ESC		LT(0, KC_ESC)
 
 // Thumb Mod-Taps
+#define F22_SPACE		LT(0, KC_SPACE)
 #define RALT_TABL		MT(MOD_RALT, KC_0)
-#define LGUI_ESC		MT(MOD_LGUI, KC_ESC)
 #define LSFT_ENT		MT(MOD_LSFT, KC_ENT)
 #define RALT_TAB		MT(MOD_RALT, KC_TAB)
-#define RCTL_DEL		MT(MOD_RCTL, KC_DEL)
-#define SH_SPACE		SH_T(KC_SPACE)
-#define KEYLOCK			MT(QK_LOCK, KC_CAPS)
-
-// One-Shot Mods
-// #define OSM_LALT		OSM(MOD_LALT)
-// #define OSM_RALT		OSM(MOD_RALT)
-// #define OSM_LCTL		OSM(MOD_LCTL)
-// #define OSM_RCTL		OSM(MOD_RCTL)
-// #define OSM_LGUI		OSM(MOD_LGUI)
-// #define OSM_RGUI		OSM(MOD_RGUI)
-// #define OSM_LSFT		OSM(MOD_LSFT)
-// #define OSM_RSFT		OSM(MOD_RSFT)
 
 // Mod Masks
 #define GET_ALL_MODS	(get_mods() | get_weak_mods() | get_oneshot_mods())
@@ -151,16 +139,6 @@
 #define RCTL_F5			MT(MOD_RCTL, KC_F5)
 #define LALT_F8			MT(MOD_LALT, KC_F8)
 #define RGUI_F11		MT(MOD_RGUI, KC_F11)
-
-// Bottom Row Mods
-// #define LALT_X			MT(MOD_LALT, KC_X)
-// #define LCTL_V			MT(MOD_LCTL, KC_V)
-// #define LSFT_C			MT(MOD_LSFT, KC_C)
-// #define LGUI_G			MT(MOD_LGUI, KC_G)
-// #define RGUI_M			MT(MOD_RGUI, KC_M)
-// #define RSFT_K			MT(MOD_RSFT, KC_K)
-// #define RCTL_COMMA		MT(MOD_RCTL, KC_COMMA)
-// #define RALT_DOT		MT(MOD_RALT, KC_DOT)
 
 // Bottom Row Hold-Tap
 #define UNDO_X		LT(0, KC_X)

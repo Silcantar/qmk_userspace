@@ -11,6 +11,24 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
 // Select Word Macro
 	if (!process_select_word(keycode, record, CK_SELWORD)) { return false; }
 
+	switch (keycode) {
+		case F22_SPACE:
+			unregister_code16(KC_F22);
+			if (record->event.pressed) {
+				if (record->tap.count) {
+					tap_code16(KC_SPACE);
+					return false;
+				} else {
+					register_code16(KC_F22);
+					return false;
+				}
+			} else {
+				unregister_code16(KC_F22);
+				return false;
+			}
+			break;
+	}
+
 	if (record->event.pressed) {
 		switch (keycode) {
 
@@ -69,6 +87,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
 				break;
 
 		// Hold Overrides
+			case LYRCLR_ESC:
+				if (!record->tap.count && record->event.pressed) {
+					clear_keyboard();
+					clear_mods();
+					unregister_code16(KC_F22);
+					layer_clear();
+					return false;
+				}
+				break;
 			case SAVE_W:
 				if (!record->tap.count && record->event.pressed) {
 					tap_code16(CMD_SAVE);
@@ -131,6 +158,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
 				break;
 
 		// Layer Cycle Keys
+			case CK_LYRCLR:
+				layer_clear();
+				return false;
 			case LAYERDOWN:
 				if (record->tap.count) {
 					current_layer = get_highest_layer(layer_state);
