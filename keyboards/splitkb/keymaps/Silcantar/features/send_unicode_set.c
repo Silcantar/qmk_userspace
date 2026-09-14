@@ -1,16 +1,16 @@
 #include "send_unicode_set.h"
 #include <string.h>
 
-bool is_ascii(char string[], bool includeNonPrinting) {
+bool is_ascii(char string[], bool strict) {
 	char firstAscii;
 	char lastAscii;
 
-	if (includeNonPrinting) {
-		firstAscii = 0x01;
-		lastAscii = 0xFF;
-	} else {
+	if (strict) {
 		firstAscii = ' ';
 		lastAscii = '~';
+	} else {
+		firstAscii = 0x01;
+		lastAscii = 0xFF;
 	}
 
 	long i;
@@ -24,11 +24,14 @@ bool is_ascii(char string[], bool includeNonPrinting) {
 }
 
 bool send_string_smart (char string[]) {
+	// Null string
 	if (string[0] == '\0') {
 		return true;
+	// ASCII string
 	} else if (is_ascii(string, false)) {
 		send_string(string);
 		return false;
+	// Unicode string
 	} else {
 		send_unicode_string(string);
 		return false;
@@ -39,21 +42,26 @@ bool send_unicode_set(
 	char default_value[],
 	char shift_value[],
 	char ralt_value[],
-	char ralt_shift_value[]) {
-	
+	char ralt_shift_value[]
+) {
+
 	char* value;
 
 	uint8_t all_mods = (get_mods() | get_weak_mods() | get_oneshot_mods());
-	
+
+	// RAlt + Shift
 	if (all_mods == (MOD_BIT(KC_LSFT) | MOD_BIT(KC_RALT)) || all_mods == (MOD_BIT(KC_RSFT) | MOD_BIT(KC_RALT))) {
 		value = ralt_shift_value;
+	// Shift only
 	} else if (all_mods & MOD_MASK_SHIFT) {
 		value = shift_value;
+	// RAlt only
 	} else if (all_mods & MOD_BIT(KC_RALT)) {
 		value = ralt_value;
+	// No mods
 	} else {
 		value = default_value;
 	}
-	
+
 	return send_string_smart(value);
 }
