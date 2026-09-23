@@ -30,7 +30,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		DM_REC1		, KC_GRAVE	, CK_INTBANG, TD_EXCLAMS, KC_AT		, TD_FSQUOTE,			  KC_NO		,	  KC_NO		,			  TD_FDQUOTE, KC_AMPR	, TD_QUES	, CK_NDASH	, CK_CHECK	, DM_PLY1,
 		KC_CAPS		, TD_QUOTES	, SAVE_W	, FIND_F	, NEW_P		, SYM_B		,			  CK_PASTE	,	  CK_COPY	,			  KC_J		, KC_L		, KC_U		, KC_Y		, KC_UNDS	, CW_TOGG,
 		LYRCLR_ESC	, LGUI_A	, LALT_R	, LCTL_S	, LSFT_KC_T	, RALT_G	,			  KC_NO		,	  KC_NO		,			  RALT_M	, RSFT_N	, RCTL_E	, LALT_I	, RGUI_O	, KC_DEL,
-		LAYERDOWN	, UNDO_X	, CUT_V		, COPY_C	, PASTE_D	, REDO_Q	, RALT_TABL	, TD_MOUSE	,	  KC_APP	, RALT_TAB	, KC_Z		, REPL_H	, KC_K		, KC_COMMA	, KC_DOT	, KC_APP,
+		LAYERDOWN	, UNDO_X	, CUT_V		, COPY_C	, PASTE_D	, REDO_Q	, RALT_TABL	, TD_MOUSE	,	  KC_APP	, RALT_TAB	, KC_Z		, REPL_H	, KC_K		, KC_COMMA	, KC_DOT	, LAYERUP,
 											  CK_PASTE	, OS_LCTL	, LSFT_ENT	, F22_SPACE	, TD_NUMERIC,	  TD_FUNC	, KC_BSPC	, OS_RSFT	, KC_F24	, CK_COPY	,
 
 		KC_NO		, KC_NO		, KC_NO		, KC_NO		,			  KC_NO		,			  KC_NO		,	  KC_NO		, KC_NO		, KC_NO		,			  KC_NO
@@ -63,9 +63,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 	[_QWERTY] = LAYOUT_myr(
 		KC_EQUAL	, KC_1		, KC_2		, KC_3		, KC_4		, KC_5		,			  KC_NO		,	  KC_NO		,			  KC_6		, KC_7		, KC_8		, KC_9		, KC_0		, KC_MINUS,
-		LAYERDOWN	, KC_Q		, KC_W		, KC_E		, KC_R		, KC_T		,			  CK_PASTE	,	  CK_COPY	,			  KC_Y		, KC_U		, KC_I		, KC_O		, KC_P		, LAYERUP,
+		KC_CAPS		, KC_Q		, KC_W		, KC_E		, KC_R		, KC_T		,			  CK_PASTE	,	  CK_COPY	,			  KC_Y		, KC_U		, KC_I		, KC_O		, KC_P		, CW_TOGG,
 		LYRCLR_ESC	, KC_A		, KC_S		, KC_D		, KC_F		, KC_G		,			  KC_NO		,	  KC_NO		,			  KC_H		, KC_J		, KC_K		, KC_L		, KC_QUOTE	, COLEMAK,
-		KC_CAPS		, KC_Z		, KC_X		, KC_C		, KC_V		, KC_B		, RALT_TABL, TD_MOUSE	,	  OS_LSG	, RALT_TAB	, KC_N		, KC_M		, KC_COMMA	, KC_DOT	, KC_SLASH	, OS_RGUI,
+		LAYERDOWN	, KC_Z		, KC_X		, KC_C		, KC_V		, KC_B		, RALT_TABL, TD_MOUSE	,	  OS_LSG	, RALT_TAB	, KC_N		, KC_M		, KC_COMMA	, KC_DOT	, KC_SLASH	, LAYERUP,
 											  CK_PASTE	, OS_LCTL	, LSFT_ENT	, F22_SPACE	, TD_NUMERIC,	  TD_FUNC	, KC_BSPC	, OS_RSFT	, OS_RCTL	, CK_COPY	,
 
 		KC_NO		, KC_NO		, KC_NO		, KC_NO		,			  KC_NO		,			  KC_NO		,	  KC_NO		, KC_NO		, KC_NO		,			  KC_NO
@@ -202,10 +202,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *		`-----------------------------------------------'			`-----------'							`-----------------------------------------------'			`-----------'
  */
 	[_GAME] = LAYOUT_myr(
-		KC_GRAVE	, KC_F3		, KC_F5		, KC_F8		, KC_F11	, KC_F12	,			  KC_NO		,	  KC_NO		,			  KC_6		, KC_7		, KC_8		, KC_9		, KC_0		, KC_MINUS,
+		KC_F		, KC_F3		, KC_F5		, KC_F8		, KC_F11	, KC_F12	,			  KC_NO		,	  KC_NO		,			  KC_6		, KC_7		, KC_8		, KC_9		, KC_0		, KC_MINUS,
 		KC_Q		, KC_1		, KC_2		, KC_3		, KC_4		, KC_5		,			  KC_TRNS	,	  KC_TRNS	,			  KC_Y		, KC_U		, KC_I		, KC_O		, KC_P		, KC_TRNS,
-		KC_ESC		, KC_A		, KC_S		, KC_W		, KC_D		, KC_E		,			  KC_NO		,	  KC_NO		,			  KC_H		, KC_J		, KC_K		, KC_L		, KC_QUOTE	, KC_TRNS,
-		KC_R		, KC_6		, KC_7		, KC_8		, KC_9		, KC_F		, KC_TAB	, KC_LGUI	,	  KC_TRNS	, KC_TRNS	, KC_1		, KC_2		, KC_3		, KC_4		, KC_5		, KC_TRNS,
+		KC_TRNS		, KC_A		, KC_S		, KC_W		, KC_D		, KC_E		,			  KC_NO		,	  KC_NO		,			  KC_H		, KC_J		, KC_K		, KC_L		, KC_QUOTE	, KC_TRNS,
+		KC_TRNS		, KC_6		, KC_7		, KC_8		, KC_9		, KC_R		, KC_TAB	, KC_LGUI	,	  KC_TRNS	, KC_TRNS	, KC_1		, KC_2		, KC_3		, KC_4		, KC_5		, KC_TRNS,
 											  KC_TRNS	, KC_LALT	, KC_LSFT	, KC_SPC	, KC_LCTL	,	  KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	, KC_TRNS	,
 
 		KC_NO		, KC_NO		, KC_NO		, KC_NO		,			  KC_NO		,			  KC_NO		,	  KC_NO		, KC_NO		, KC_NO		,			  KC_NO
