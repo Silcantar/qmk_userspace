@@ -315,7 +315,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
 			case KC_LT:			return send_unicode_set("", "≤", "≪", "∈");		break;
 			case KC_GT:			return send_unicode_set("", "≥", "≫", "∋");		break;
 			case KC_EXLM:		return send_unicode_set("", "¡", "", "");		break;
-			case KC_AMPR:		return send_unicode_set("", "—", "", "");		break;
+			case KC_AMPR:		return send_unicode_set("", "‽", "", "");		break;
 			// case KC_PIPE:		return send_unicode_set("", "€", "¥", "₹");		break;
 			// case KC_TILDE:		return send_unicode_set("", "≈", "≅", "≉");		break;
 			// case KC_CIRC:		return send_unicode_set("", "°", "", "°");		break;
@@ -334,7 +334,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
 			case KC_GRAVE:		return send_unicode_set("", "´", "‹", "›");		break;
 			case KC_HASH:		return send_unicode_set("", "£", "⊂", "⊃");		break;
 			case KC_ASTR:		return send_unicode_set("", "×", "∏", "∗");		break;
-			case KC_9:			return send_unicode_set("", "∂", "∇", "");		break;
+			case KC_9:			return send_unicode_set("", "—", "∇", "");		break;
 			case KC_PERCENT:	return send_unicode_set("", "‰", "‱", "⁒");		break;
 			case KC_DOLLAR:		return send_unicode_set("", "¢", "₿", "₪");		break;
 			case KC_8:			return send_unicode_set("", "∞", "∝", "א");		break;
